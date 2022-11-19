@@ -1,0 +1,290 @@
+body,
+main,
+.move-display,
+#scoreboard,
+.image {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+header span {
+    display: inline;
+}
+
+header span:nth-child(1) {
+    color: #000000;
+}
+
+header span:nth-child(2) {
+    color: #000000;
+}
+
+header span:nth-child(3) {
+    color: #000000;
+}
+
+h1 {
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+main {
+    height: 100%;
+}
+
+#display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+    margin-top: 7vh;
+}
+
+section div {
+    text-align: center;
+    align-items: center;
+}
+
+/* Player/CPU selections display */
+
+.move-display {
+    align-items: center;
+    height: 100%;
+}
+
+.image {
+    box-sizing: border-box;
+    background-color: #c4ffd6;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    min-height: 60%;
+    width: 60%;
+    margin-top: 1.5vh;
+
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 5px #000000;
+}
+
+.rock {
+    background-image: url("rock.svg");
+}
+
+.paper {
+    background-image: url("paper.svg");
+}
+
+.scissors {
+    background-image: url("scissors.svg");
+}
+
+h2 {
+
+    color: #000000;
+    text-shadow: 2px 2px 4px #ffffff;
+}
+
+/* Scoring */
+
+.move-display h2 {
+    font-size: 2.2rem;
+}
+
+#scoreboard {
+    justify-content: space-around;
+}
+
+#scoreboard h2 {
+    font-size: 2.8rem;
+}
+
+span {
+    display: block;
+}
+
+/* Round result */
+
+#result {
+    font-size: 2.2rem;
+    border-style: solid;
+    width: 60%;
+}
+
+.default {
+    border-color: #ffffff;
+    color: #000000;
+}
+
+.win {
+    border-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.tie {
+    border-color: #ffffff;
+    color: #000000;
+}
+
+.lose {
+    border-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+#info {
+    font-size: 1.25rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 3rem;
+}
+
+/* Selection buttons */
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+}
+
+#buttons button {
+    background-size: cover;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 0 5rem 0;
+
+    border-radius: 50%;
+    border-color: black;
+    cursor: pointer;
+}
+
+#buttons button:hover {
+    transform: scale(2);
+}
+
+#buttons .rock {
+    background-color: #ffffff;
+}
+
+#buttons .paper {
+    background-color: #ffffff;
+}
+
+#buttons .scissors {
+    background-color: #ffffff;
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 35%;
+    height: 50%;
+    padding: 10px;
+
+    background-color: #ffffff;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 7px;
+    box-shadow: 0 0 5px 5px #000000;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-content,
+#restart-btn {
+    border-style: solid;
+    border-radius: 7px;
+}
+
+#final-result {
+    font-size: 3rem;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+}
+
+#restart-btn {
+    background-color: #ffffff;
+    padding: 1em;
+    font-size: 1.5rem;
+    border-color: rgb(0, 0, 0);
+    cursor: pointer;
+    box-shadow: 0 0 4px 1px #000000;
+}
+
+#restart-btn:hover {
+    background-color: #ffffff;
+    border-color: rgb(0, 0, 0);
+}
+
+.visible {
+    display: flex;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 650px) {
+    html {
+        font-size: 14px;
+    }
+
+    #display {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "player cpu"
+            "score score";
+    }
+
+    #player {
+        grid-area: player;
+    }
+
+    #cpu {
+        grid-area: cpu;
+    }
+
+    #scoreboard {
+        grid-area: score;
+    }
+
+    #scoreboard {
+        justify-content: space-evenly;
+    }
+
+    #info {
+        display: none;
+    }
+
+    span {
+        display: inline;
+    }
+
+    .modal-content {
+        width: 50%;
+    }
+}

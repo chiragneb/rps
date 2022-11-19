@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1><span>ROCK, </span><span>PAPER, </span><span>SCISSORS</span></h1>
+    </header>
+    <main>
+        <section id="display">
+            <div id="player" class="move-display">
+                <h2>Human</h2>
+                <div class="image">
+                </div>
+            </div>
+            <div id="scoreboard">
+                <h2>Score: <span>0 - 0</span></h2>
+                <h3 id="info">Best of Five wins the Game!</h3>
+                <h3 id="result" class="default">Click below to move</h3>
+
+            </div>
+            <div id="computer" class="move-display">
+                <h2>AI</h2>
+                <div class="image">
+                </div>
+            </div>
+        </section>
+
+        <section id="buttons">
+            <button class="rock"></button>
+            <button class="paper"></button>
+            <button class="scissors"></button>
+        </section>
+    </main>
+    <div class="modal">
+        <div class="modal-content">
+            <h2 id="final-result">Game over - You </h2>
+            <p>PLAY AGAIN?</p>
+            <button id="restart-btn">RESTART!</button>
+        </div>
+    </div>
+</body>
+
+</html>
